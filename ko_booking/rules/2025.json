@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "rule_version": "kr-income-2025.1",
+  "tax_year": 2025,
+  "reviewed_on": "2026-10-26",
+  "review_scope": "official_examples_and_formula_components",
+  "brackets": [
+    {"upper_krw": 14000000, "rate_pct": "6", "deduction_krw": 0},
+    {"upper_krw": 50000000, "rate_pct": "15", "deduction_krw": 1260000},
+    {"upper_krw": 88000000, "rate_pct": "24", "deduction_krw": 5760000},
+    {"upper_krw": 150000000, "rate_pct": "35", "deduction_krw": 15440000},
+    {"upper_krw": 300000000, "rate_pct": "38", "deduction_krw": 19940000},
+    {"upper_krw": 500000000, "rate_pct": "40", "deduction_krw": 25940000},
+    {"upper_krw": 1000000000, "rate_pct": "42", "deduction_krw": 35940000},
+    {"upper_krw": null, "rate_pct": "45", "deduction_krw": 65940000}
+  ],
+  "personal_service_prefix": "94",
+  "personal_service_threshold_krw": 40000000,
+  "standard_multipliers": {"simple": "2.8", "double": "3.4"},
+  "standard_rate_weights": {"simple": "1", "double": "0.5"},
+  "reviewed_rate_snapshot": {
+    "source_key": "nts:expense-rates:2025",
+    "raw_sha256": "ebd3fc0fcb92636c3e9cfc5e46af144d665e1e1e860e38e29d4e5b37c0752a4d",
+    "normalized_sha256": "ba5de2650bf52f89c3d39c5b47115710a219d32885806850896d9ea8903850d9"
+  },
+  "sources": {
+    "tax_brackets": {
+      "publisher": "국세청",
+      "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7667&mi=2227",
+      "reviewed_html_sha256": "347e731b289cc738d4d22153441d29469e90c1c8fc310506e10a9367e27fab29",
+      "locator": "2023~2025년 귀속 세율표 및 2025년 귀속 과세표준 3천만원 예시"
+    },
+    "expense_formulas": {
+      "publisher": "국세청",
+      "url": "https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?bbsId=1143&mi=2207&nttSn=1350751",
+      "attachment_url": "https://www.nts.go.kr/comm/nttFileDownload.do?fileKey=df3d4892a1240dda8e8809ffe71b3601",
+      "attachment_sha256": "99fcd9fe626e99562d600eb0bed3727d727995404c16f3e630bc35f4dca7b94e",
+      "locator": "2025년 귀속 경비율 PDF 총칙 9~13쪽; 계산례 11쪽",
+      "legal_references": ["소득세법 시행령 제143조", "소득세법 시행규칙 제67조"]
+    },
+    "personal_service_tiers": {
+      "publisher": "국세청",
+      "url": "https://www.law.go.kr/admRulInfoP.do?admRulSeq=2100000276582",
+      "locator": "2025년 귀속 경비율 고시 제2조 및 제4조",
+      "promulgated_at": "2026-03-30",
+      "effective_at": "2026-03-30",
+      "applies_to_tax_year": 2025
+    }
+  },
+  "unimplemented": [
+    "eligibility_determination", "multiple_businesses", "joint_business_allocation",
+    "owner_occupied_rate_adjustment", "disability_rate_adjustment", "job_stabilization_funds",
+    "negative_standard_income", "income_deductions", "tax_credits", "tax_reliefs",
+    "withholding", "local_income_tax", "minimum_tax", "filing_rounding", "final_tax_payable"
+  ]
+}

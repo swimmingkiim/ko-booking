@@ -1,0 +1,15 @@
+{
+  "tax_year": 2025,
+  "method": "simple",
+  "industry_code": "940908",
+  "revenue_krw": "45000000",
+  "conditions": {
+    "single_business": true,
+    "single_industry": true,
+    "joint_business": false,
+    "eligibility_confirmed": true,
+    "general_rate_applicable": true,
+    "special_adjustments": [],
+    "job_stabilization_funds_krw": "0"
+  }
+}

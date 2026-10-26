@@ -1,1 +1,1 @@
-"""Official-source collection; no tax calculation or filing is performed."""
+"""Official-source collection and reviewed income-tax formula components."""

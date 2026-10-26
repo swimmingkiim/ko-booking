@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ko-booking"
 version = "0.1.0"
-description = "Versioned official Korean tax source collectors"
+description = "Versioned official Korean tax sources and reviewed calculation components"
 requires-python = ">=3.11"
 dependencies = ["openpyxl>=3.1,<4"]
 
@@ -14,3 +14,6 @@ ko-booking = "ko_booking.__main__:main"
 
 [tool.setuptools.packages.find]
 include = ["ko_booking*"]
+
+[tool.setuptools.package-data]
+ko_booking = ["rules/*.json"]

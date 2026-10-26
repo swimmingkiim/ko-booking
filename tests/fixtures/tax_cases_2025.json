@@ -1,0 +1,59 @@
+[
+  {
+    "id": "nts-2025-tax-base-example",
+    "kind": "official_worked_example",
+    "source": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7667&mi=2227",
+    "locator": "2025년 귀속 예시",
+    "calculation": "basic_income_tax",
+    "tax_year": 2025,
+    "taxable_income_krw": "30000000",
+    "expected_krw_exact": "3240000"
+  },
+  {
+    "id": "nts-2025-personal-service-example",
+    "kind": "official_worked_example",
+    "source": "https://www.nts.go.kr/comm/nttFileDownload.do?fileKey=df3d4892a1240dda8e8809ffe71b3601",
+    "locator": "2025년 귀속 경비율 PDF 11쪽",
+    "calculation": "simple_business_income",
+    "tax_year": 2025,
+    "industry_code": "940908",
+    "revenue_krw": "45000000",
+    "general_rate_pct": "75",
+    "excess_rate_pct": "65",
+    "expected_krw_exact": "11750000"
+  },
+  {
+    "id": "derived-2025-standard-comparison",
+    "kind": "synthetic_from_official_formula",
+    "source": "https://www.nts.go.kr/comm/nttFileDownload.do?fileKey=df3d4892a1240dda8e8809ffe71b3601",
+    "locator": "9쪽 산식 및 2025년 귀속 XLSX 525104 행; 입력금액은 합성",
+    "calculation": "standard_business_income",
+    "tax_year": 2025,
+    "industry_code": "525104",
+    "revenue_krw": "70000000",
+    "general_rate_pct": "86",
+    "standard_rate_pct": "10.4",
+    "bookkeeping": "simple",
+    "purchases_krw": "20000000",
+    "expected_direct_krw_exact": "42720000",
+    "expected_cap_krw_exact": "27440000",
+    "expected_krw_exact": "27440000"
+  },
+  {
+    "id": "derived-2025-double-bookkeeping-half-rate",
+    "kind": "synthetic_from_official_formula",
+    "source": "https://www.nts.go.kr/comm/nttFileDownload.do?fileKey=df3d4892a1240dda8e8809ffe71b3601",
+    "locator": "9쪽 산식 및 2025년 귀속 XLSX 525104 행; 입력금액은 합성",
+    "calculation": "standard_business_income",
+    "tax_year": 2025,
+    "industry_code": "525104",
+    "revenue_krw": "70000000",
+    "general_rate_pct": "86",
+    "standard_rate_pct": "10.4",
+    "bookkeeping": "double",
+    "purchases_krw": "50000000",
+    "expected_direct_krw_exact": "16360000",
+    "expected_cap_krw_exact": "33320000",
+    "expected_krw_exact": "16360000"
+  }
+]
