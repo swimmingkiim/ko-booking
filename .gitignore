@@ -7,3 +7,7 @@ node_modules/
 __pycache__/
 data/raw/
 data/private/
+data/local/
+*.egg-info/
+build/
+dist/
