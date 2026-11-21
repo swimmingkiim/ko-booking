@@ -40,6 +40,7 @@ def main():
     filing = commands.add_parser("filing-prepare", help="장부의 신고 준비 자료·누락 진단(제출용 파일 아님)")
     filing.add_argument("--year", type=int, required=True)
     filing.add_argument("--ledger-db", default="data/private/ledger.sqlite3")
+    filing.add_argument("--input", help="사업장·재고·조정 보완 입력 JSON")
     args = parser.parse_args()
     try:
         if args.command == "serve":
@@ -50,7 +51,10 @@ def main():
             return 0
         if args.command == "filing-prepare":
             from .filing import prepare_filing
-            print(json.dumps(prepare_filing(args.ledger_db, args.year), ensure_ascii=False, indent=2))
+            supplement = json.loads(Path(args.input).read_text(encoding="utf-8")) if args.input else None
+            if args.input and not isinstance(supplement, dict):
+                raise ValueError("보완 입력은 JSON 객체여야 합니다.")
+            print(json.dumps(prepare_filing(args.ledger_db, args.year, supplement), ensure_ascii=False, indent=2))
             return 0
         archive = None if args.command == "tax-base" else Archive(args.db)
         client = HttpClient(transport=args.transport)

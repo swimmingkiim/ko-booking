@@ -1,0 +1,18 @@
+{
+  "tax_year": 2025,
+  "ledger_fingerprint": "최신 filing-prepare 결과의 ledger_fingerprint로 교체",
+  "business": {
+    "registration_number": "",
+    "industry_code": "",
+    "income_code": "40",
+    "address": "",
+    "industry_name": "",
+    "period_start": "20250101",
+    "period_end": "20251231",
+    "note": ""
+  },
+  "expense_mapping": {},
+  "costs": {},
+  "additional_expenses": {},
+  "adjustments": {}
+}

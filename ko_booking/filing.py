@@ -40,7 +40,7 @@ class _ReadOnlyLedger(Ledger):
         return db
 
 
-def prepare_filing(ledger_path, year):
+def prepare_filing(ledger_path, year, supplement=None):
     """Capture one consistent DB view without changing year, review or source rows."""
     if type(year) is not int or not 1900 <= year <= 2100:
         raise LedgerError("귀속연도를 확인해 주세요.")
@@ -54,10 +54,10 @@ def prepare_filing(ledger_path, year):
         raise LedgerError("장부 DB 형식·스키마를 확인해 주세요. 웹앱에서 만든 DB가 필요합니다.") from error
     if state["settings"]["year"] != year:
         raise LedgerError("웹앱에서 선택한 장부 연도와 요청한 귀속연도가 다릅니다.")
-    return prepare_state(state)
+    return prepare_state(state, supplement)
 
 
-def prepare_state(state):
+def prepare_state(state, supplement=None):
     """Prepare internal category totals, preserving unknowns and provenance."""
     year = state["settings"]["year"]
     summary = state["summary"]
@@ -113,6 +113,15 @@ def prepare_state(state):
         "pending_ids": summary["pending_ids"], "vat_pending_ids": summary["vat_pending_ids"],
         "excluded_ids": summary["excluded_ids"], "blocking_issues": issues,
     }
+    if supplement is not None:
+        from .filing_mapping import map_candidates
+        normalized, candidates, mapping_issues = map_candidates(state, content["category_totals"], supplement, _REVIEW["records"])
+        content["schema_version"] = 2
+        content["candidate_mapping_version"] = "2025-v26.05-1"
+        content["supplement"] = normalized
+        content["candidate_records"] = candidates
+        supplied = {"BUSINESS_IDENTITY_MISSING", "INVENTORY_UNCONFIRMED", "ADJUSTMENTS_UNCONFIRMED"}
+        content["blocking_issues"] = [i for i in issues if i["code"] not in supplied] + mapping_issues
     # Identity covers all values and provenance, not just the ledger review hash.
     snapshot = hashlib.sha256(canonical(content).encode("utf-8")).hexdigest()
     return {**content, "snapshot_id": snapshot, "created_at": now()}
