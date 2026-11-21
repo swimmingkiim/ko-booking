@@ -1,6 +1,8 @@
 """Read-only filing preparation diagnostics; never a Hometax submission file."""
 
 import hashlib
+import json
+from importlib.resources import files
 import sqlite3
 from pathlib import Path
 
@@ -9,6 +11,8 @@ from .imports import LedgerError
 from .ledger import Ledger
 
 
+_REVIEW = json.loads(files("ko_booking").joinpath("rules/filing-2025.json").read_text(encoding="utf-8"))
+
 SPEC = {
     "tax_year": 2025,
     "title": "2025년 귀속 종합소득세 전자신고 변환파일 설명서_5차",
@@ -16,8 +20,13 @@ SPEC = {
     "post_number": 1246,
     "post_modified_on": "2026-09-14",
     "source_url": "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=16&tm2lIdx=1602000000&tm3lIdx=",
-    "sha256": None,
-    "content_verified": False,
+    "sha256": _REVIEW["source_sha256"],
+    "source_filename": _REVIEW["source_filename"],
+    "source_origin": _REVIEW["source_origin"],
+    "document_revision_on": _REVIEW["document_revision_on"],
+    "content_verified": True,
+    "reviewed_scope": _REVIEW["reviewed_scope"],
+    "submission_format_validated": False,
 }
 
 
@@ -77,7 +86,7 @@ def prepare_state(state):
         ("INVENTORY_UNCONFIRMED", "inventory", "재고·제조비용과 매출원가 적용 여부를 검토해야 합니다."),
         ("ADJUSTMENTS_UNCONFIRMED", "adjustments", "감가상각·수입 및 필요경비 조정 입력을 아직 지원하지 않습니다."),
         ("FULL_RETURN_UNSUPPORTED", "return", "다른 소득·공제·기납부세액 등 전체 신고서를 아직 지원하지 않습니다."),
-        ("SPEC_UNVERIFIED", "spec", "공식 변환명세 본문을 확보·검증하지 못했습니다."),
+        ("SPEC_IMPLEMENTATION_INCOMPLETE", "spec", "검토한 명세의 파일 생성·홈택스 호환 검증은 아직 지원하지 않습니다."),
     ):
         issue(code, field, message)
     groups = {}

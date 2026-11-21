@@ -51,10 +51,12 @@ class FilingTests(unittest.TestCase):
         self.ledger.review(2025)
         after = prepare_filing(self.path, 2025)
         self.assertNotIn("LEDGER_NOT_REVIEWED", self.codes(after))
-        self.assertTrue({"SPEC_UNVERIFIED", "FULL_RETURN_UNSUPPORTED", "ADJUSTMENTS_UNCONFIRMED",
+        self.assertTrue({"SPEC_IMPLEMENTATION_INCOMPLETE", "FULL_RETURN_UNSUPPORTED", "ADJUSTMENTS_UNCONFIRMED",
                          "INVENTORY_UNCONFIRMED", "BUSINESS_IDENTITY_MISSING"} <= self.codes(after))
-        self.assertIsNone(after["spec"]["sha256"])
-        self.assertFalse(after["spec"]["content_verified"])
+        self.assertEqual(after["spec"]["sha256"], "4edf9c51f6f3f23520abfd9d3f085144fb85312275aa0ab8e3aacea0edb11cf3")
+        self.assertTrue(after["spec"]["content_verified"])
+        self.assertFalse(after["spec"]["submission_format_validated"])
+        self.assertIn("C115400", after["spec"]["reviewed_scope"])
         self.assertFalse(after["submission_ready"])
 
     def test_identity_stable_but_changes_with_name_and_transaction_revision(self):

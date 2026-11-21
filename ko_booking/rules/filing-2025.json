@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "tax_year": 2025,
+  "revision": "v26.05",
+  "source_filename": "1. To_Be_변환파일_수록형식_종합소득세[20260511]_최종_5차.docx",
+  "source_sha256": "4edf9c51f6f3f23520abfd9d3f085144fb85312275aa0ab8e3aacea0edb11cf3",
+  "source_bytes": 2169008,
+  "document_revision_on": "2026-05-11",
+  "post_modified_on": "2026-09-14",
+  "source_origin": "user_provided_official_attachment",
+  "reviewed_scope": [
+    "input_file_format",
+    "C115300",
+    "C115400",
+    "related_business_income_requirements",
+    "record_order"
+  ],
+  "submission_format_validated": false,
+  "encoding_description": "ASCII CODE; Korean 2-byte KSC-5601",
+  "record_separator": "CRLF",
+  "records": [
+    {
+      "record_type": "52",
+      "form_code": "C115300",
+      "length_bytes": 400,
+      "length_excludes": "CRLF",
+      "source_body_block_zero_based": 2755,
+      "fields": [
+        {
+          "ordinal": 1,
+          "name": "자료구분",
+          "type": "CHAR",
+          "length_bytes": 2,
+          "start_byte": 1,
+          "end_byte": 2,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 2,
+          "name": "서식코드",
+          "type": "CHAR",
+          "length_bytes": 7,
+          "start_byte": 3,
+          "end_byte": 9,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 3,
+          "name": "소득구분코드",
+          "type": "CHAR",
+          "length_bytes": 2,
+          "start_byte": 10,
+          "end_byte": 11,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 4,
+          "name": "사업자등록번호",
+          "type": "CHAR",
+          "length_bytes": 10,
+          "start_byte": 12,
+          "end_byte": 21,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 5,
+          "name": "소재지",
+          "type": "CHAR",
+          "length_bytes": 60,
+          "start_byte": 22,
+          "end_byte": 81,
+          "null_policy": "Null 허용"
+        },
+        {
+          "ordinal": 6,
+          "name": "주업종코드",
+          "type": "CHAR",
+          "length_bytes": 6,
+          "start_byte": 82,
+          "end_byte": 87,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 7,
+          "name": "업종명",
+          "type": "CHAR",
+          "length_bytes": 80,
+          "start_byte": 88,
+          "end_byte": 167,
+          "null_policy": "Null 허용"
+        },
+        {
+          "ordinal": 8,
+          "name": "장부상수입금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 168,
+          "end_byte": 180,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 9,
+          "name": "수입금액에서제외할금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 181,
+          "end_byte": 193,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 10,
+          "name": "수입금액에가산할금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 194,
+          "end_byte": 206,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 11,
+          "name": "세무조정후수입금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 207,
+          "end_byte": 219,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 12,
+          "name": "장부상필요경비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 220,
+          "end_byte": 232,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 13,
+          "name": "필요경비에서제외할금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 233,
+          "end_byte": 245,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 14,
+          "name": "필요경비에가산할금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 246,
+          "end_byte": 258,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 15,
+          "name": "세무조정후필요경비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 259,
+          "end_byte": 271,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 16,
+          "name": "차가감소득금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 272,
+          "end_byte": 284,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 17,
+          "name": "기부금한도초과액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 285,
+          "end_byte": 297,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 18,
+          "name": "기부금이월액중필요경비산입액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 298,
+          "end_byte": 310,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 19,
+          "name": "당해연도소득금액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 311,
+          "end_byte": 323,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 20,
+          "name": "과세기간 ( 시작일 )",
+          "type": "CHAR",
+          "length_bytes": 8,
+          "start_byte": 324,
+          "end_byte": 331,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 21,
+          "name": "과세기간 ( 종료일 )",
+          "type": "CHAR",
+          "length_bytes": 8,
+          "start_byte": 332,
+          "end_byte": 339,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 22,
+          "name": "공란",
+          "type": "CHAR",
+          "length_bytes": 61,
+          "start_byte": 340,
+          "end_byte": 400,
+          "null_policy": "SPACE"
+        }
+      ]
+    },
+    {
+      "record_type": "52",
+      "form_code": "C115400",
+      "length_bytes": 650,
+      "length_excludes": "CRLF",
+      "source_body_block_zero_based": 2802,
+      "fields": [
+        {
+          "ordinal": 1,
+          "name": "자료구분",
+          "type": "CHAR",
+          "length_bytes": 2,
+          "start_byte": 1,
+          "end_byte": 2,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 2,
+          "name": "서식코드",
+          "type": "CHAR",
+          "length_bytes": 7,
+          "start_byte": 3,
+          "end_byte": 9,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 3,
+          "name": "소득구분코드",
+          "type": "CHAR",
+          "length_bytes": 2,
+          "start_byte": 10,
+          "end_byte": 11,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 4,
+          "name": "사업자등록번호",
+          "type": "CHAR",
+          "length_bytes": 10,
+          "start_byte": 12,
+          "end_byte": 21,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 5,
+          "name": "소재지",
+          "type": "CHAR",
+          "length_bytes": 60,
+          "start_byte": 22,
+          "end_byte": 81,
+          "null_policy": "Null 허용"
+        },
+        {
+          "ordinal": 6,
+          "name": "주업종코드",
+          "type": "CHAR",
+          "length_bytes": 6,
+          "start_byte": 82,
+          "end_byte": 87,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 7,
+          "name": "업종명",
+          "type": "CHAR",
+          "length_bytes": 80,
+          "start_byte": 88,
+          "end_byte": 167,
+          "null_policy": "Null 허용"
+        },
+        {
+          "ordinal": 8,
+          "name": "장부상수입금액 _ 매출액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 168,
+          "end_byte": 180,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 9,
+          "name": "장부상수입금액 _ 기타",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 181,
+          "end_byte": 193,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 10,
+          "name": "장부상수입금액 _ 합계",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 194,
+          "end_byte": 206,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 11,
+          "name": "매출원가 _ 기초재고액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 207,
+          "end_byte": 219,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 12,
+          "name": "매출원가 _ 당기상품매입액또는제조비용",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 220,
+          "end_byte": 232,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 13,
+          "name": "매출원가 _ 기말재고액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 233,
+          "end_byte": 245,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 14,
+          "name": "매출원가",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 246,
+          "end_byte": 258,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 15,
+          "name": "제조비 _ 기초재고액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 259,
+          "end_byte": 271,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 16,
+          "name": "제조비 _ 당기매입액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 272,
+          "end_byte": 284,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 17,
+          "name": "제조비 _ 기말재고액",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 285,
+          "end_byte": 297,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 18,
+          "name": "제조비 _ 당기 재료 비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 298,
+          "end_byte": 310,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 19,
+          "name": "제조비 _ 노무비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 311,
+          "end_byte": 323,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 20,
+          "name": "제조비 _ 경비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 324,
+          "end_byte": 336,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 21,
+          "name": "제조비 _ 당기제조비용",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 337,
+          "end_byte": 349,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 22,
+          "name": "일반관리비 _ 급료",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 350,
+          "end_byte": 362,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 23,
+          "name": "일반관리비 _ 제세공과금",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 363,
+          "end_byte": 375,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 24,
+          "name": "일반관리비 _ 임차료",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 376,
+          "end_byte": 388,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 25,
+          "name": "일반관리비 _ 지급이자",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 389,
+          "end_byte": 401,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 26,
+          "name": "일반관리비 _ 접대비 기업업무추진비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 402,
+          "end_byte": 414,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 27,
+          "name": "일반관리비 _ 기부금",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 415,
+          "end_byte": 427,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 28,
+          "name": "일반관리비 _ 기타",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 428,
+          "end_byte": 440,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 29,
+          "name": "일반관리비등계",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 441,
+          "end_byte": 453,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 30,
+          "name": "필요경비합계",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 454,
+          "end_byte": 466,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 31,
+          "name": "과세기간 ( 시작일 )",
+          "type": "CHAR",
+          "length_bytes": 8,
+          "start_byte": 467,
+          "end_byte": 474,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 32,
+          "name": "과세기간 ( 종료일 )",
+          "type": "CHAR",
+          "length_bytes": 8,
+          "start_byte": 475,
+          "end_byte": 482,
+          "null_policy": "Not null"
+        },
+        {
+          "ordinal": 33,
+          "name": "일반관리비 _ 감가상각비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 483,
+          "end_byte": 495,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 34,
+          "name": "일반관리비 _ 차량유지비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 496,
+          "end_byte": 508,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 35,
+          "name": "일반관리비 _ 지급수수료",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 509,
+          "end_byte": 521,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 36,
+          "name": "일반관리비 _ 소모품비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 522,
+          "end_byte": 534,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 37,
+          "name": "일반관리비 _ 복리후생비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 535,
+          "end_byte": 547,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 38,
+          "name": "일반관리비 _ 운반비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 548,
+          "end_byte": 560,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 39,
+          "name": "일반관리비 _ 광고선전비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 561,
+          "end_byte": 573,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 40,
+          "name": "일반관리비 _ 여비교통비",
+          "type": "NUMBER",
+          "length_bytes": 13,
+          "start_byte": 574,
+          "end_byte": 586,
+          "null_policy": "Not null default 0"
+        },
+        {
+          "ordinal": 41,
+          "name": "공란",
+          "type": "CHAR",
+          "length_bytes": 64,
+          "start_byte": 587,
+          "end_byte": 650,
+          "null_policy": "SPACE"
+        }
+      ]
+    }
+  ],
+  "open_issues": [
+    "Cross-reference numbering in prose differs from record tables; reconcile by names and formulas before serialization.",
+    "Signed number representation and padding are not implemented or certified.",
+    "Full return records, official code lists and Hometax validation remain unimplemented."
+  ]
+}
