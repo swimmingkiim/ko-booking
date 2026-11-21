@@ -34,8 +34,17 @@ def main():
     business = commands.add_parser("business-income", help="검토한 경비율 판본으로 추계 사업소득 계산")
     business.add_argument("--input", required=True, help="적용 조건·수입·경비를 담은 JSON 파일")
     business.add_argument("--rate-version", type=int, required=True)
+    web = commands.add_parser("serve", help="거래 검토·간편장부 로컬 웹앱")
+    web.add_argument("--port", type=int, default=8765)
+    web.add_argument("--ledger-db", default="data/private/ledger.sqlite3")
     args = parser.parse_args()
     try:
+        if args.command == "serve":
+            from .web import serve
+            if not 0 <= args.port <= 65535:
+                raise ValueError("포트는 0~65535 사이여야 합니다.")
+            serve(args.ledger_db, args.db, args.port)
+            return 0
         archive = None if args.command == "tax-base" else Archive(args.db)
         client = HttpClient(transport=args.transport)
         if args.command == "tax-base":

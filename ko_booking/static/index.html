@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6554df">
+  <title>ko-booking · 사장님의 작은 장부</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">ko.</span><span>ko-booking<small>사장님의 작은 장부</small></span></a>
+    <p class="nav-label">나의 장부</p>
+    <nav aria-label="주 메뉴">
+      <a href="#overview" data-nav="overview"><span class="nav-icon">▦</span>장부 한눈에</a>
+      <a href="#transactions" data-nav="transactions"><span class="nav-icon">☷</span>거래 검토<span id="nav-count" class="nav-count"></span></a>
+      <a href="#import" data-nav="import"><span class="nav-icon">＋</span>자료 가져오기</a>
+      <a href="#tax" data-nav="tax"><span class="nav-icon">▤</span>세금·근거</a>
+    </nav>
+    <div class="local-card"><span class="local-symbol">◉</span><strong>내 컴퓨터에 보관</strong><p>가져온 자료와 변경 기록은<br>이 기기에 저장돼요.</p></div>
+    <div class="sidebar-foot">하나씩 정리하는 사업의 기록<br><span>ko-booking · Local edition</span></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div class="breadcrumb">내 사업장 <span>/</span> <strong id="breadcrumb-view">장부 한눈에</strong></div><div class="top-controls"><label class="year-label">장부 연도<select id="year" aria-label="장부 연도"></select></label><button id="profile" class="profile" type="button"><span class="avatar">나</span><span id="business-name">나의 사업장</span></button></div></header>
+    <main id="main" tabindex="-1"><div class="loading">장부를 불러오고 있어요.</div></main>
+    <footer class="page-footer">기록을 모으고, 근거를 남기는 장부. <span>내보내기 전에 거래와 증빙을 함께 확인해 주세요.</span></footer>
+  </div>
+  <dialog id="editor" aria-labelledby="editor-title"></dialog>
+  <dialog id="profile-dialog" aria-labelledby="profile-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

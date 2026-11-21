@@ -16,4 +16,4 @@ ko-booking = "ko_booking.__main__:main"
 include = ["ko_booking*"]
 
 [tool.setuptools.package-data]
-ko_booking = ["rules/*.json"]
+ko_booking = ["rules/*.json", "static/*.html", "static/*.css", "static/*.js", "static/*.csv"]
