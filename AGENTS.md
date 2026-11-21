@@ -10,6 +10,7 @@
 
 - Python 3.11+ 패키지: `ko_booking/`. CLI: `python -m ko_booking --help`.
 - 공식 원천 수집: `archive.py`, `law.py`, `rates.py`. 계산: `tax.py`, `rules/2025.json`.
+- 신고 준비 진단: `filing.py`. `python -m ko_booking filing-prepare --year 2025` (기존 장부 읽기 전용, 제출용 파일 아님). 범위·제약은 `docs/research/05-filing-support-review.md`.
 - 웹앱: `web.py`, `imports.py`, `ledger.py`, `static/`. 실행: `python -m ko_booking serve` (루프백 전용).
 - 프런트엔드 문법 검사: `node --check ko_booking/static/app.js`. 사용법·UI 검증: `docs/research/04-web-mvp-validation.md`.
 - 설치: `python -m pip install -e .`. 검사: `python -m unittest discover -s tests -v`, `git diff --check`.

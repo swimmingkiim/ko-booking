@@ -28,3 +28,5 @@ python -m ko_booking serve
 
 브라우저에서 `http://127.0.0.1:8765`를 엽니다. 거래는 `data/private/ledger.sqlite3`에 저장됩니다.
 [4단계 사용법·검증 기록](docs/research/04-web-mvp-validation.md)을 참조하세요.
+
+신고 준비 자료와 미지원 항목은 `python -m ko_booking filing-prepare --year 2025`로 확인할 수 있습니다. 기존 장부를 읽는 진단 JSON이며 홈택스 제출 파일은 아닙니다.

@@ -37,6 +37,9 @@ def main():
     web = commands.add_parser("serve", help="거래 검토·간편장부 로컬 웹앱")
     web.add_argument("--port", type=int, default=8765)
     web.add_argument("--ledger-db", default="data/private/ledger.sqlite3")
+    filing = commands.add_parser("filing-prepare", help="장부의 신고 준비 자료·누락 진단(제출용 파일 아님)")
+    filing.add_argument("--year", type=int, required=True)
+    filing.add_argument("--ledger-db", default="data/private/ledger.sqlite3")
     args = parser.parse_args()
     try:
         if args.command == "serve":
@@ -44,6 +47,10 @@ def main():
             if not 0 <= args.port <= 65535:
                 raise ValueError("포트는 0~65535 사이여야 합니다.")
             serve(args.ledger_db, args.db, args.port)
+            return 0
+        if args.command == "filing-prepare":
+            from .filing import prepare_filing
+            print(json.dumps(prepare_filing(args.ledger_db, args.year), ensure_ascii=False, indent=2))
             return 0
         archive = None if args.command == "tax-base" else Archive(args.db)
         client = HttpClient(transport=args.transport)
