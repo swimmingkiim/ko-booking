@@ -13,6 +13,7 @@
 - [수집기 설치·실행 방법](docs/collectors.md)
 - [3단계: 계산 규칙 검증 기록](docs/research/03-tax-rules-validation.md)
 - [계산요소 지원 범위·실행 방법](docs/tax-rules.md)
+- [5단계: 홈택스 제출 지원 검토](docs/research/05-filing-support-review.md)
 
 각 단계의 결과를 커밋하고 사용자에게 보고한 뒤 다음 단계로 진행합니다.
 
